@@ -17,6 +17,7 @@
 		BDBA8DA42C49B97D002B4DEC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BDBA8DA32C49B97D002B4DEC /* GoogleService-Info.plist */; };
 		BDBA8DA72C4AC7C0002B4DEC /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBA8DA62C4AC7C0002B4DEC /* LoginView.swift */; };
 		BDBA8DA92C4AD369002B4DEC /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBA8DA82C4AD369002B4DEC /* LoginViewModel.swift */; };
+		BDD980D72C4B0C04002DE7C5 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDD980D62C4B0C04002DE7C5 /* Launch Screen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		BDBA8DA32C49B97D002B4DEC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BDBA8DA62C4AC7C0002B4DEC /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		BDBA8DA82C4AD369002B4DEC /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		BDD980D62C4B0C04002DE7C5 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 			children = (
 				BDBA8D8B2C49B4CF002B4DEC /* Social_DiaryApp.swift */,
 				BDBA8D942C49B4D1002B4DEC /* Social_Diary.entitlements */,
+				BDD980D62C4B0C04002DE7C5 /* Launch Screen.storyboard */,
 				BDBA8DA52C4AC532002B4DEC /* Other */,
 				BDBA8D9B2C49B578002B4DEC /* Views */,
 				BDBA8D9A2C49B56F002B4DEC /* ViewModels */,
@@ -176,6 +179,7 @@
 			files = (
 				BDBA8D932C49B4D1002B4DEC /* Preview Assets.xcassets in Resources */,
 				BDBA8D902C49B4D1002B4DEC /* Assets.xcassets in Resources */,
+				BDD980D72C4B0C04002DE7C5 /* Launch Screen.storyboard in Resources */,
 				BDBA8DA42C49B97D002B4DEC /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -328,6 +332,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -357,6 +362,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

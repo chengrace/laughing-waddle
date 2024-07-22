@@ -11,25 +11,22 @@ struct LoginView: View {
     var body: some View {
         VStack {
             // Header
-            ZStack{
+            ZStack {
+                // blue rectangle at top
                 RoundedRectangle(cornerRadius: 0)
-                    .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
-                    
+                    .foregroundColor(.blue)
+                
+                // Title of app
                 VStack {
-                    Text("Social Diary")
+                    Text("Laughing Waddle")
+                        .font(.system(size: 40))
                         .foregroundColor(.white)
                         .bold()
-                        .font(.system(size: 40))
-                        .offset(y:30)
                 }
+                .padding(.top,50)
             }
-            .frame(width: UIScreen.main.bounds.width * 3, height: 300)
-            .offset(y:-80)
-            // Login form
-            
-            // create account
-            
-            Spacer()
+            .frame(width:UIScreen.main.bounds.width * 3, height: 250)
+            .offset(y:-330)
         }
     }
 }
