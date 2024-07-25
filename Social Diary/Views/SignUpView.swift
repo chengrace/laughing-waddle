@@ -1,14 +1,14 @@
 //
-//  LoginView.swift
+//  SignUpView.swift
 //  Social Diary
 //
-//  Created by Sean Yu on 7/19/24.
+//  Created by Sean Yu on 7/22/24.
 //
 
 import SwiftUI
 
-struct LoginView: View {
-    @StateObject var viewModel = LoginViewModel()
+struct SignUpView: View {
+    @StateObject var viewModel = SignUpViewModel()
     var body: some View {
         NavigationView {
             VStack {
@@ -23,6 +23,9 @@ struct LoginView: View {
                             .foregroundColor(.red)
                     }
                     
+                    TextField("Name", text: $viewModel.name)
+                        .textFieldStyle(DefaultTextFieldStyle())
+
                     // text fields for email address and password
                     TextField("Email Address", text: $viewModel.email )
                         .textFieldStyle(DefaultTextFieldStyle())
@@ -32,15 +35,10 @@ struct LoginView: View {
                         .textFieldStyle(DefaultTextFieldStyle())
                     
                     //login button
-                    ButtonView(title: "Login", background: .blue) {viewModel.login()}
+                    ButtonView(title: "Create Account", background: .blue) {viewModel.signUp()}
+                    
                     
                 }
-                // create account button
-                
-                Text("First time here?")
-                NavigationLink("Sign Up", destination: SignUpView())
-                
-               
             }
             .edgesIgnoringSafeArea(.top)
         }
@@ -49,5 +47,5 @@ struct LoginView: View {
 }
 
 #Preview {
-    LoginView()
+    SignUpView()
 }

@@ -1,14 +1,16 @@
 //
-//  LoginViewModel.swift
+//  SignUpViewModel.swift
 //  Social Diary
 //
-//  Created by Sean Yu on 7/19/24.
+//  Created by Sean Yu on 7/22/24.
 //
 
 import Foundation
 import FirebaseAuth
+import FirebaseFirestore
 
-class LoginViewModel: ObservableObject {
+class SignUpViewModel: ObservableObject {
+    @Published var name = ""
     @Published var email = ""
     @Published var password = ""
     @Published var errorMessage = ""
@@ -17,16 +19,35 @@ class LoginViewModel: ObservableObject {
         
     }
     
-    func login() {
+    func signUp() {
+        
+        // first check if the information is valid, if not then return
+        
         guard validate() else {
             return
         }
-        // attempts to log the user in, if the login fails then the error message "invalid login" is printed
         
-        Auth.auth().signIn(withEmail: email, password: password)
-        if Auth.auth().currentUser == nil {
-            errorMessage="Invalid Login"
+        // create user using FirebaseAuth and add to the firebase using the insertUserRecord function
+        
+        Auth.auth().createUser(withEmail: email, password: password) {[weak self] result,error in
+            guard let userId = result?.user.uid else {
+                return
+            }
+            self?.insertUserRecord(id: userId)
         }
+    }
+    
+    // this function adds the new user to the firestore database and returns nothing
+    
+    private func insertUserRecord(id: String) {
+        let newUser = User(id: id,
+                           name: name,
+                           email: email,
+                           joined: Date().timeIntervalSince1970)
+        let db = Firestore.firestore()
+        db.collection("users")
+            .document(id)
+            .setData(newUser.asDictionary())
     }
     
     private func validateEmail() -> Bool {
